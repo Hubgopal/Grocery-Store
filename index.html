@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Css style file -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Login form design file -->
+        <link rel="stylesheet" href="css/form.css">
+
+        <!-- Search style file -->
+        <link rel="stylesheet" href="css/search.css">
+
+        <link rel="stylesheet" href="css/shoping.css">
+
+        <!-- font awesome link -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+        <!-- Scroll animation file -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <title>Grocery Store </title>
+    </head>
+
+    <body>
+
+        <header class="header">
+            <a href="#" class="logo">Grocery <span>Store</span></a>
+            <input type="checkbox" id="check">
+            <label for="check" class="icons">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+                <i class="fa-solid fa-xmark" id="close-icon"></i>
+            </label>
+            <div class="navbar">
+                <a href="#" style="--i:0;">Home</a>
+                <a href="#shop" style="--i:1;">Categary</a>
+                <a href="#deals" style="--i:2;">Deals</a>
+                <a href="#recipie" style="--i:3;">Recipie</a>
+                <a href="#abouts" style="--i:4;">About</a>
+                <a href="#contact" style="--i:5;">Contact</a>
+            </div>
+            <div class="nav-right">
+
+                <section class="searchSection">
+                    <button id="searchIcon" class="search-icon">
+                        <input
+                            type="text" id="searchBox" class="search-box"
+                            placeholder="Search for products..." />
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </section>
+
+                <div class="shoping">
+                    <i class="fa-solid fa-cart-shopping"
+                        id="shopping-card"><span id="cart-count">0</span></i>
+                </div>
+
+                <!-- Shopping Cart -->
+                <div id="shopping-cart">
+                    <div class="cart-header">
+                        <h3>Your Cart</h3>
+                        <button id="close-cart"
+                            class="c-close-btn">Close</button>
+                    </div>
+                    <ul id="cart-items"
+                        style="padding: 8px 10px 8px 19px;"></ul>
+                    <div class="cart-footer">
+                        <span>Total: &#8377;<span
+                                id="total-price">0.00</span></span>
+                        <button id="checkout-btn"
+                            class="checkout-button">Checkout</button>
+                    </div>
+                </div>
+                <!-- shopping cart end -->
+                <i class="fa-solid fa-user" id="fUserButton"></i>
+            </div>
+        </header>
+
+        <!-- ********************************************** -->
+        <!--**************& login form section *************-->
+        <!-- ********************************************** -->
+
+        <section class="LoginForm" id="fContainer">
+            <div class="f-container" id="fContainer">
+                <!-- Registration Form -->
+                <div class="f-section" id="fRegister">
+                    <span class="f-close" id="fCloseRegister">&times;</span>
+                    <h2>Register</h2>
+                    <form id="fRegisterForm">
+                        <input type="text" id="fUsername" class="f-input"
+                            placeholder="Username" required>
+                        <input type="email" id="fEmail" class="f-input"
+                            placeholder="Email" required>
+                        <input type="password" id="fPassword" class="f-input"
+                            placeholder="Password" required>
+                        <button type="submit" class="f-btn"><a
+                                href="#">Register</a></button>
+                        <p>Already have an account? <a href="#"
+                                id="fToLogin">Login</a></p>
+                    </form>
+                </div>
+
+                <!-- Login Form -->
+                <div class="f-section hidden" id="fLogin">
+                    <span class="f-close" id="fCloseLogin">&times;</span>
+                    <h2>Login</h2>
+                    <form id="fLoginForm">
+                        <input type="email" id="fLoginEmail" class="f-input"
+                            placeholder="Email" required>
+                        <input type="password" id="fLoginPassword"
+                            class="f-input"
+                            placeholder="Password" required>
+                        <button type="submit" class="f-btn"><a
+                                href="#">Login</a></button>
+                        <p>Don’t have an account? <a href="#"
+                                id="fToRegister">Register</a></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ************************************************ -->
+        <!-- ************* Home page section ************* -->
+        <!-- *********************************************** -->
+        <div class="home-page-bg">
+            <div class="intro">
+                <h1>Welcome to Grocery</h1>
+                <p>Explore the world of fresh produce, meats, and more!</p>
+                <button><a href="Explore.html" class="shop-now-btn">Shop
+                        Now</a></button>
+            </div>
+            <div class="features">
+                <div class="feature" data-aos="zoom-out-right">
+                    <i class="fa-solid fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your groceries delivered right to your doorstep!</p>
+                </div>
+                <div class="feature" data-aos="zoom-out-up">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Fresh Produce</h3>
+                    <p>Fresh fruits and vegetables, delivered daily!</p>
+                </div>
+                <div class="feature" data-aos="zoom-out-left">
+                    <i class="fa-solid fa-cutlery"></i>
+                    <h3>Ready to Cook</h3>
+                    <p>Get ready-to-cook meals, delivered right to your
+                        door!</p>
+                </div>
+            </div>
+            <div class="Explore" data-aos="zoom-out-up">
+                <h2>Start Shopping Today!</h2>
+                <button><a href="Explore.html" class="shop-now-btn">Explore Our
+                        Store</a></button>
+            </div>
+        </div>
+
+        <!-- ***************************************************** -->
+        <!-- ****************** Shopping section ***************** -->
+        <!-- **************************************************** -->
+
+        <div class="shop-page" id="shop"
+            data-aos-anchor="#example-anchor" data-aos-offset="500"
+            data-aos-duration="500">
+            <div class="shop-home">
+                <div class="shop-nav" data-aos="fade-right"
+                    data-aos-anchor="#example-anchor" data-aos-offset="500"
+                    data-aos-duration="500">
+                    <div class="shop-heading">Shop</div>
+                    <div class="shop-navbar">
+                        <a href="#fruts-page" class="shop-nav-link">Fruits and
+                            Vegetables</a>
+                        <a href="#meat-page" class="shop-nav-link">Meat and
+                            Seafood</a>
+                        <a href="#fruts-page" class="shop-nav-link">Bakery and
+                            Bread</a>
+                        <a href="#Snacks" class="shop-nav-link">Snacks and
+                            Sweets</a>
+                        <a href="#Beverages" class="shop-nav-link">Beverages</a>
+                        <a href="#fruts-page" class="shop-nav-link">Frozen
+                            Foods</a>
+                        <a href="#fruts-page" class="shop-nav-link">Organic and
+                            Health Foods</a>
+                        <a href="#per-care" class="shop-nav-link">Personal
+                            Care</a>
+                    </div>
+                </div>
+
+                <div class="shop-page-items" data-aos="fade-left">
+                    <div class="fruts-page" id="fruts-page">
+
+                        <div class="fruts-boxs" id="fruts-page">
+                            <div class="fruts-box">
+                                <img src="css/images/fruit-images (1).png"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 1</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 1"
+                                                data-price="19.99"
+                                                data-image="css/images/fruit-images (1).png">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruit-images (2).png"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 2</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 2"
+                                                data-price="19.99"
+                                                data-image="css/images/fruit-images (2).png">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/fruit-images (3).png"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 3</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 3"
+                                                data-price="19.99"
+                                                data-image="css/images/fruit-images (3).png">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruit-images (4).png"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 4</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 4"
+                                                data-price="19.99"
+                                                data-image="css/images/fruit-images (4).png">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (1).jpg"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 5</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 5"
+                                                data-price="19.99"
+                                                data-image="css/images/fruits (1).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (2).png"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 6</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 6"
+                                                data-price="19.99"
+                                                data-image="css/images/fruits (2).png">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fruts-boxs" id="meat-page">
+                            <div class="fruts-box">
+                                <img src="css/images/meatf (1).jpg"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 7</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 7"
+                                                data-price="19.99"
+                                                data-image="css/images/meatf (1).jpg">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/meatf (2).jpg"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 8</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 8"
+                                                data-price="19.99"
+                                                data-image="css/images/meatf (2).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/meatf (3).jpg"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 9</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 9"
+                                                data-price="19.99"
+                                                data-image="css/images/meatf (3).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/meatf (4).jpg"
+                                    alt="Deal 1">
+                                <div class="fruts-info">
+                                    <h3>Deal 10</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 10"
+                                                data-price="19.99"
+                                                data-image="css/images/meatf (4).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/meatf (5).jpg"
+                                    alt="Deal 11">
+                                <div class="fruts-info">
+                                    <h3>Deal 11</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 11"
+                                                data-price="19.99"
+                                                data-image="css/images/meatf (5).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/meatf (6).jpg"
+                                    alt="Deal 12">
+                                <div class="fruts-info">
+                                    <h3>Deal 12</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 12"
+                                                data-price="19.99"
+                                                data-image="css/images/meatf (6).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fruts-boxs" id="Backery">
+                            <div class="fruts-box">
+                                <img src="css/images/backery (1).jpg"
+                                    alt="Deal 13">
+                                <div class="fruts-info">
+                                    <h3>Deal 13</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 13"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/backery (1).png"
+                                    alt="Deal 14">
+                                <div class="fruts-info">
+                                    <h3>Deal 14</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 14"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).png">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/backery (2).jpg"
+                                    alt="Deal 15">
+                                <div class="fruts-info">
+                                    <h3>Deal 15</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 15"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (2).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/backery (3).jpg"
+                                    alt="Deal 16">
+                                <div class="fruts-info">
+                                    <h3>Deal 16</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 16"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (3).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/backery (4).jpg"
+                                    alt="Deal 17">
+                                <div class="fruts-info">
+                                    <h3>Deal 17</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 17"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (4).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/backery (5).jpg"
+                                    alt="Deal 18">
+                                <div class="fruts-info">
+                                    <h3>Deal 18</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 18"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (5).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fruts-boxs" id="Snacks">
+                            <div class="fruts-box">
+                                <img src="css/images/sweets (1).jpg"
+                                    alt="Deal 19">
+                                <div class="fruts-info">
+                                    <h3>Deal 19</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 19"
+                                                data-price="19.99"
+                                                data-image="css/images/sweets (1).jpg">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/sweets (2).jpg"
+                                    alt="Deal 20">
+                                <div class="fruts-info">
+                                    <h3>Deal 20</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 20"
+                                                data-price="19.99"
+                                                data-image="css/images/sweets (2).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/sweets (3).jpg"
+                                    alt="Deal 21">
+                                <div class="fruts-info">
+                                    <h3>Deal 21</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 21"
+                                                data-price="19.99"
+                                                data-image="css/images/sweets (3).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/sweets (4).jpg"
+                                    alt="Deal 22">
+                                <div class="fruts-info">
+                                    <h3>Deal 22</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 22"
+                                                data-price="19.99"
+                                                data-image="css/images/sweets (4).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/sweets (5).jpg"
+                                    alt="Deal 23">
+                                <div class="fruts-info">
+                                    <h3>Deal 23</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 23"
+                                                data-price="19.99"
+                                                data-image="css/images/sweets (5).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/sweets (6).jpg"
+                                    alt="Deal 24">
+                                <div class="fruts-info">
+                                    <h3>Deal 24</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 24"
+                                                data-price="19.99"
+                                                data-image="css/images/sweets (6).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fruts-boxs" id="Beverages">
+                            <div class="fruts-box">
+                                <img src="css/images/beve (1).jpg"
+                                    alt="Deal 25">
+                                <div class="fruts-info">
+                                    <h3>Deal 25</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 25"
+                                                data-price="19.99"
+                                                data-image="css/images/beve (1).jpg">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/beve (2).jpg"
+                                    alt="Deal 26">
+                                <div class="fruts-info">
+                                    <h3>Deal 26</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 26"
+                                                data-price="19.99"
+                                                data-image="css/images/beve (2).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/beve (3).jpg"
+                                    alt="Deal 27">
+                                <div class="fruts-info">
+                                    <h3>Deal 27</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 27"
+                                                data-price="19.99"
+                                                data-image="css/images/beve (3).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/beve (4).jpg"
+                                    alt="Deal 28">
+                                <div class="fruts-info">
+                                    <h3>Deal 28</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 28"
+                                                data-price="19.99"
+                                                data-image="css/images/beve (4).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/beve (5).jpg"
+                                    alt="Deal 29">
+                                <div class="fruts-info">
+                                    <h3>Deal 29</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 29"
+                                                data-price="19.99"
+                                                data-image="css/images/beve (5).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/beve (6).jpg"
+                                    alt="Deal 30">
+                                <div class="fruts-info">
+                                    <h3>Deal 30</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 30"
+                                                data-price="19.99"
+                                                data-image="css/images/beve (6).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fruts-boxs" id="fruts-page">
+                            <div class="fruts-box">
+                                <img src="css/images/backery (1).jpg"
+                                    alt="Deal 31">
+                                <div class="fruts-info">
+                                    <h3>Deal 31</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 31"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (2).png"
+                                    alt="Deal 32">
+                                <div class="fruts-info">
+                                    <h3>Deal 32</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 32"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (2).png"
+                                    alt="Deal 33">
+                                <div class="fruts-info">
+                                    <h3>Deal 33</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 33"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (2).png"
+                                    alt="Deal 34">
+                                <div class="fruts-info">
+                                    <h3>Deal 34</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 34"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (2).png"
+                                    alt="Deal 35">
+                                <div class="fruts-info">
+                                    <h3>Deal 35</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 35"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/fruits (2).png"
+                                    alt="Deal 36">
+                                <div class="fruts-info">
+                                    <h3>Deal 36</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 36"
+                                                data-price="19.99"
+                                                data-image="css/images/backery (1).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fruts-boxs" id="per-care">
+                            <div class="fruts-box">
+                                <img src="css/images/per-care (1).jpg"
+                                    alt="Deal 37">
+                                <div class="fruts-info">
+                                    <h3>Deal 37</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span>
+                                            <button class="add-to-cart"
+                                                data-name="Deal 37"
+                                                data-price="19.99"
+                                                data-image="css/images/per-care (1).jpg">
+                                                Add to Cart
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/per-care (1).webp"
+                                    alt="Deal 38">
+                                <div class="fruts-info">
+                                    <h3>Deal 38</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 38"
+                                                data-price="19.99"
+                                                data-image="css/images/per-care (1).webp">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fruts-box">
+                                <img src="css/images/per-care (2).jpg"
+                                    alt="Deal 39">
+                                <div class="fruts-info">
+                                    <h3>Deal 39</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 39"
+                                                data-price="19.99"
+                                                data-image="css/images/per-care (2).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/per-care (3).jpg"
+                                    alt="Deal 40">
+                                <div class="fruts-info">
+                                    <h3>Deal 40</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 40"
+                                                data-price="19.99"
+                                                data-image="css/images/per-care (3).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/per-care (4).jpg"
+                                    alt="Deal 41">
+                                <div class="fruts-info">
+                                    <h3>Deal 41</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 41"
+                                                data-price="19.99"
+                                                data-image="css/images/per-care (4).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fruts-box">
+                                <img src="css/images/per-care (5).jpg"
+                                    alt="Deal 42">
+                                <div class="fruts-info">
+                                    <h3>Deal 42</h3>
+                                    <p>Lorem ipsum dolor sit amet, it amet nulla
+                                        auctor, vestibulum
+                                        magna sed, convallis ex.</p>
+                                    <div class="price">
+                                        <span
+                                            class="fruts-price">&#8377;19.99</span>
+                                        <span class="fruts-discount">20%
+                                            off</span>
+                                        <span> <button class="add-to-cart"
+                                                data-name="Deal 42"
+                                                data-price="19.99"
+                                                data-image="css/images/per-care (5).jpg">
+                                                Add to Cart
+                                            </button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ******************  Deals section   ****************** -->
+        <div class="deal-section" id="deals">
+            <div class="deal-heading">Deals of the Day</div>
+            <div class="deal-container">
+                <div class="deal-box" data-aos="flip-left">
+                    <a href="#Beverages"><img
+                            src="css/images/Deals (1).jpg"></a>
+                    <div class="deal-info">
+                        <h3>Deal 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed sit amet nulla auctor, vestibulum
+                            magna sed, convallis ex.</p>
+                        <div class="d-price">
+                            <span class="deal-price">&#8377;19.99</span>
+                            <span class="deal-discount">20% off</span>
+                            <span><button>Explore Now</button></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-box" data-aos="flip-up">
+                    <a href="#meat-page"><img src="css/images/Deals (2).jpg"
+                            alt="Deal 2"></a>
+                    <div class="deal-info">
+                        <h3>Deal 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed sit amet nulla auctor, vestibulum
+                            magna sed, convallis ex.</p>
+                        <div class="d-price">
+                            <span class="deal-price">&#8377;19.99</span>
+                            <span class="deal-discount">20% off</span>
+                            <span><button>Explore Now</button></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-box" data-aos="flip-right" data-aos="zoom-in">
+                    <a href="#fruts-page"><img src="css/images/Deals (3).jpg"
+                            alt="Deal 3"></a>
+                    <div class="deal-info">
+                        <h3>Deal 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed sit amet nulla auctor, vestibulum
+                            magna sed, convallis ex.</p>
+                        <div class="d-price">
+                            <span class="deal-price">&#8377;19.99</span>
+                            <span class="deal-discount">20% off</span>
+                            <span><button>Explore Now</button></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************Recipie sections**************** -->
+        <div class="recipie" id="recipie">
+            <div class="recipie-bg" data-aos="fade-up"
+                data-aos-anchor-placement="top-center">
+                <div class="re-heading1">Your Ultimate</div>
+                <div class="re-heading2"><span>Recipie</span>Destination</div>
+                <div class="re-info">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Doloremque ratione quas
+                    dolorem fugiat sit quis quae esse? At, eaque dolore facere,
+                    dignissimos, magnam culpa obcaecati
+                    excepturi unde quod eveniet illo!
+                    Explicabo in consequuntur illo exercitationem itaque dolores
+                    alias quod facere officiis tempora. Illo
+                    culpa qui ipsum cumque id odit eaque, commodi nostrum error
+                    minus expedita et? Modi quis voluptatem
+                    itaque?</div>
+                <div class="button">
+                    <button>Explore Recipie</button>
+                    <button>Join Community</button>
+                </div>
+                <re-box>
+                    <div class="re-in-box">
+                        <div class="re-contity">500+</div>
+                        <div class="re-head">Food Recipies</div>
+                    </div>
+                    <div class="re-in-box">
+                        <div class="re-contity">200+</div>
+                        <div class="re-head">Free Toturial video</div>
+                    </div>
+                    <div class="re-in-box">
+                        <div class="re-contity">5000+</div>
+                        <div class="re-head">People in Community</div>
+                    </div>
+                </re-box>
+            </div>
+        </div>
+
+        <!-- ************ client section******************** -->
+        <div class="clients-say">
+            <div class="clients-say-header">
+                <h2>What our client's say</h2>
+            </div>
+            <div class="clients-say-container">
+                <div class="client-review" data-aos="zoom-out-right">
+                    <div class="clint-info">
+                        <img src="css/images/staff (2).jpg" alt="Client 1">
+                        <div class="c-name">
+                            <h3>John Doe</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;&star;</span>
+                    <p>"I've been using Grocery for all my grocery needs and I'm
+                        absolutely loving it! The quality of
+                        products is top-notch and the delivery is always on
+                        time."</p>
+                    <h3>- John Doe, Happy Customer</h3>
+                </div>
+                <div class="client-review" data-aos="zoom-out-up">
+                    <div class="clint-info">
+                        <img src="css/images/staff.jpg" alt="Client 1">
+                        <div class="c-name">
+                            <h3>Jaani</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                    <span>&bigstar;&bigstar;&star;&star;&star;</span>
+                    <p>"I've been using Grocery for all my grocery needs and I'm
+                        absolutely loving it! The quality of
+                        products is top-notch and the delivery is always on
+                        time."</p>
+                    <h3>- John Doe, Happy Customer</h3>
+                </div>
+                <div class="client-review" data-aos="zoom-out-left">
+                    <div class="clint-info">
+                        <img src="css/images/staff.webp" alt="Client 1">
+                        <div class="c-name">
+                            <h3>Smithy</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                    <p>"I've been using Grocery for all my grocery needs and I'm
+                        absolutely loving it! The quality of
+                        products is top-notch and the delivery is always on
+                        time."</p>
+                    <h3>- John Doe, Happy Customer</h3>
+                </div>
+            </div>
+        </div>
+        <!-- About Page Container -->
+        <div class="about-bg" id="abouts">
+            <div class="about-page" data-aos="zoom-in">
+                <!-- About Page Header -->
+                <div class="about-header">
+                    <h1>About Us</h1>
+                </div>
+                <!-- About Page Content -->
+                <div class="about-content">
+                    <!-- About Section 1 -->
+                    <div class="about-section">
+                        <h2>Our Story</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed sit amet nulla auctor, vestibulum
+                            magna
+                            sed, convallis ex.</p>
+                    </div>
+                    <!-- About Section 2 -->
+                    <div class="about-section">
+                        <h2>Our Mission</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed sit amet nulla auctor, vestibulum
+                            magna
+                            sed, convallis ex.</p>
+                    </div>
+                    <!-- About Section 3 -->
+                    <div class="about-section">
+                        <h2>Our Team</h2>
+                        <div class="team-members">
+                            <div class="team-member">
+                                <img src="css/images/staff.jpg"
+                                    alt="Team Member 1">
+                                <h3>John Doe</h3>
+                                <p>Founder & CEO</p>
+                            </div>
+                            <div class="team-member">
+                                <img src="css/images/staff (2).jpg"
+                                    alt="Team Member 2">
+                                <h3>Jaani</h3>
+                                <p>Co-Founder & CMO</p>
+                            </div>
+                            <div class="team-member">
+                                <img src="css/images/staff.webp"
+                                    alt="Team Member 3">
+                                <h3>Smithy</h3>
+                                <p>CTO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section" id="contact">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Sed sit amet nulla auctor, vestibulum magna
+                        sed, convallis ex.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i>+91 9370448972</li>
+                        <li><i class="fa-solid fa-envelope"></i> <a
+                                href="mailto:info@example.com">gopaldawar45@gmail.com</a></li>
+                        <li><i class="fa-solid fa-location-dot"></i>At Kundane
+                            Shakri Road, Dhule</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Message"></textarea>
+                        <button>Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************* Footer section start ************ -->
+        <!-- ************* Footer section start ************ -->
+        <footer class="footer">
+            <div class="footer-container">
+
+                <div class="footer-center">
+                    <h3>Product List</h3>
+                    <ul>
+                        <li><a href="#fruts-page">Fruits and Vegetables</a></li>
+                        <li><a href="#meat-page">Meat and Seafood</a></li>
+                        <li><a href="#Bakery">Bakery and Bread</a></li>
+                        <li><a href="#Snacks">Snacks and Sweets</a></li>
+                        <li><a href="#Beverages">Beverages</a></li>
+                        <li><a href="#per-care">Personal Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h3>Product Types</h3>
+                    <ul>
+                        <li><a href="#">Organic</a></li>
+                        <li><a href="#">Non-Organic</a></li>
+                        <li><a href="#">Vegan</a></li>
+                        <li><a href="#">Gluten-Free</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="payment-methods">
+                        <img src="css/images/py.jpg" alt="Payment Methods">
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-left">
+                <p>&copy; 2023 Grocery. All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- ********* End ******** -->
+
+        <script src="js/scripts.js"></script>
+
+        <!-- ********* login form script ********* -->
+        <script src="js/form.js"></script>
+
+        <!-- ********* search script file ********** -->
+        <script src="js/search.js"></script>
+
+        <script src="js/shoping.js"></script>
+
+        <!-- ********* web scrolling ********** -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+    </script>
+    </body>
+
+</html>
